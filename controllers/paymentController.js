@@ -49,7 +49,7 @@ export const paymentVerification = catchAsyncError(async (req, res, next) => {
             razorpay_signature
         })
 
-        res.redirect(`http://localhost:3000/paymentsuccess?reference=${razorpay_payment_id}`);
+        res.redirect(`${process.env.FRONTEND_URL}/paymentsuccess?reference=${razorpay_payment_id}`);
     } else {
         res.status(200).json({
             success: true,
